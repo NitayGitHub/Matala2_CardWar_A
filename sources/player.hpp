@@ -1,16 +1,21 @@
+#ifndef PLAYER_H
+#define PLAYER_H
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-#include <list>
-#include "sources/card.hpp"
+#include <array>
+#include "card.hpp"
 using namespace std;
+
+constexpr int STACKINISIZE = 26;
+constexpr int MAXSCOREPOS = 52;
 
 class Player
 {
 private:
     string name;
-    Card wonCards[52];
-    Card cardsStack[26];
+    array<Card, MAXSCOREPOS> wonCards;
+    array<Card, STACKINISIZE> cardsStack;
     int stackSize;
     int wonCardsSize;
     // player stats
@@ -30,3 +35,5 @@ public:
     void randomizeStack();
     Card drawCard();
 };
+
+#endif

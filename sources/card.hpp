@@ -1,3 +1,5 @@
+#ifndef CARD_H
+#define CARD_H
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
@@ -16,3 +18,5 @@ public:
     string getName();
     void randomizeCard();
 };
+
+#endif
