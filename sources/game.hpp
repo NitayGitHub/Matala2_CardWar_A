@@ -5,8 +5,9 @@
 #include <stdexcept>
 #include <array>
 #include "player.hpp"
-
 using namespace std;
+namespace ariel{
+
 class Game
 {
 private:
@@ -25,5 +26,7 @@ public:
     void printStats();
     void newGame();
 };
+
+}
 
 #endif

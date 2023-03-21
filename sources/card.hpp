@@ -3,9 +3,10 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-
 using namespace std;
 
+namespace ariel
+{
 class Card
 {
 private:
@@ -18,5 +19,6 @@ public:
     string getName();
     void randomizeCard();
 };
+}
 
 #endif

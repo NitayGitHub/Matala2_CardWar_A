@@ -9,7 +9,8 @@ using namespace std;
 
 constexpr int STACKINISIZE = 26;
 constexpr int MAXSCOREPOS = 52;
-
+namespace ariel
+{
 class Player
 {
 private:
@@ -35,5 +36,5 @@ public:
     void randomizeStack();
     Card drawCard();
 };
-
+}
 #endif
