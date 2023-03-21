@@ -25,9 +25,9 @@ int main() {
    for (int i=0;i<5;i++) {
     game.playTurn();
    }
-   game.printLastTurn() // print the last turn stats. For example:
-                                                    // Alice played Queen of Hearts Bob played 5 of Spades. Alice wins.
-                                                    // Alice played 6 of Hearts Bob played 6 of Spades. Draw. Alice played 10 of Clubs Bob played 10 of Diamonds. draw. Alice played Jack of Clubs Bob played King of Diamonds. Bob wins.
+   game.printLastTurn(); // print the last turn stats. For example:
+   // Alice played Queen of Hearts Bob played 5 of Spades. Alice wins.
+   // Alice played 6 of Hearts Bob played 6 of Spades. Draw. Alice played 10 of Clubs Bob played 10 of Diamonds. draw. Alice played Jack of Clubs Bob played King of Diamonds. Bob wins.
    cout << p1.stacksize() << endl; //prints the amount of cards left. should be 21 but can be less if a draw was played
    cout << p2.cardesTaken() << endl; // prints the amount of cards this player has won. 
    game.playAll(); //playes the game untill the end
