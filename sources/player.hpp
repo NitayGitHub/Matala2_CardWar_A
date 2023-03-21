@@ -22,8 +22,8 @@ private:
 public:
     Player(string name);
     string getName();
-    void cardesTaken();
-    void stacksize();
+    int cardesTaken();
+    int stacksize();
     void updateStats(int wins, int games, int draws, int score);
 
     void addWonCard(Card card);
