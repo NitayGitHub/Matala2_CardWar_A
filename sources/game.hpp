@@ -14,10 +14,11 @@ private:
     Player p1;
     Player p2;
     int turn;
-    array<string, STACKINISIZE> turnOutcome;
+    string turnOutcome[STACKINISIZE];
 
 public:
     Game(Player p1, Player p2);
+    Game();
     void playTurn();
     void printLastTurn();
     void playAll();

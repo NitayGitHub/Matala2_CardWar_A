@@ -15,8 +15,8 @@ class Player
 {
 private:
     string name;
-    array<Card, MAXSCOREPOS> wonCards;
-    array<Card, STACKINISIZE> cardsStack;
+    Card wonCards[MAXSCOREPOS];
+    Card cardsStack[STACKINISIZE];
     int stackSize;
     int wonCardsSize;
     // player stats
@@ -27,6 +27,7 @@ private:
 
 public:
     Player(string name);
+    Player();
     string getName();
     int cardesTaken();
     int stacksize();

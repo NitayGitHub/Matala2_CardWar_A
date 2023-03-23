@@ -15,6 +15,7 @@ private:
 
 public:
     Card(int value, string cardName);
+    Card();
     int getValue();
     string getName();
     void randomizeCard();
