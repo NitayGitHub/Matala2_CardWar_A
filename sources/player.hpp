@@ -27,7 +27,6 @@ private:
 
 public:
     Player(string name);
-    Player();
     string getName();
     int cardesTaken();
     int stacksize();

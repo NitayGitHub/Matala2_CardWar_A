@@ -3,17 +3,6 @@
 using namespace std;
 using namespace ariel;
 
-Player::Player()
-{
-    this->name = "default";
-    this->stackSize = 0;
-    this->wonCardsSize = 0;
-    this->totalwins = 0;
-    this->totalGames = 0;
-    this->totaldraws = 0;
-    this->highestScore = 0;
-}
-
 Player::Player(string name){
     this->name = name;
     this->stackSize = 0;
@@ -33,6 +22,9 @@ int Player::cardesTaken(){
 }
 
 int Player::stacksize(){
+    if(this->stackSize < 0){
+        throw string("Negative stack size.");
+    }
     return this->stackSize;
 }
 
@@ -54,10 +46,12 @@ void Player::randomizeStack(){
     for (int i = 0; i < STACKINISIZE; i++){
         this->cardsStack[i].randomizeCard();
     }
+    this->stackSize = STACKINISIZE;
 }
 
 Card Player::drawCard(){
-    Card card = this->cardsStack[this->stackSize];
-    this->stackSize++;
+    Card card = this->cardsStack[this->stackSize-1];
+    this->stackSize--;
+    //cout << "Player " << this->name << " ST: " << this->stackSize << endl;
     return card;
 }

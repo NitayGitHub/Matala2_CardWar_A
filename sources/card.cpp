@@ -15,7 +15,7 @@ int Card::getValue(){
     return this->value;
 }
 
-string Card::getName(){
+string Card::toString(){
     return this->cardName;
 }
 

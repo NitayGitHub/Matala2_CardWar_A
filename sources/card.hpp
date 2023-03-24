@@ -17,7 +17,7 @@ public:
     Card(int value, string cardName);
     Card();
     int getValue();
-    string getName();
+    string toString();
     void randomizeCard();
 };
 }
