@@ -8,7 +8,7 @@ Card::Card(int value, string cardName){
 }
 
 Card::Card(){
-    this->value = 0;
+    this->value = -1;
 }
 
 int Card::getValue(){
@@ -18,5 +18,3 @@ int Card::getValue(){
 string Card::toString(){
     return this->cardName;
 }
-
-void Card:: randomizeCard(){};

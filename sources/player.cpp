@@ -4,6 +4,9 @@ using namespace std;
 using namespace ariel;
 
 Player::Player(string name){
+    if (name.empty()){
+        throw string("Player name is empty.");
+    }
     this->name = name;
     this->stackSize = 0;
     this->wonCardsSize = 0;
@@ -37,21 +40,23 @@ void Player::updateStats(int wins, int games, int draws, int score){
     }
 }
 
-void Player::addWonCard(Card card){
-    this->wonCards[this->wonCardsSize] = card;
-    this->wonCardsSize++;
+void Player::addWonCards(int cards_won){
+    this->wonCardsSize+=cards_won;
 }
 
-void Player::randomizeStack(){
-    for (int i = 0; i < STACKINISIZE; i++){
-        this->cardsStack[i].randomizeCard();
-    }
+void Player::newStack(){
     this->stackSize = STACKINISIZE;
+    this->wonCardsSize = 0;
 }
 
-Card Player::drawCard(){
-    Card card = this->cardsStack[this->stackSize-1];
+void Player::decreaseStack(){
     this->stackSize--;
-    //cout << "Player " << this->name << " ST: " << this->stackSize << endl;
-    return card;
+}
+
+void Player::setCurrR(string Rname){
+    this->currRival = Rname;
+}
+
+string Player::getCurrR(){
+    return this->currRival;
 }

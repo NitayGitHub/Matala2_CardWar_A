@@ -18,7 +18,6 @@ public:
     Card();
     int getValue();
     string toString();
-    void randomizeCard();
 };
 }
 

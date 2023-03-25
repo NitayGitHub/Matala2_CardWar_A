@@ -2,9 +2,8 @@
 #define GAME_H
 #include <iostream>
 #include <sstream>
-#include <stdexcept>
-#include <array>
 #include "player.hpp"
+#include "deck.hpp"
 using namespace std;
 namespace ariel{
 
@@ -14,7 +13,10 @@ private:
     Player& p1;
     Player& p2;
     int turn;
+    Deck deck;
     string turnOutcome[STACKINISIZE];
+    string winner;
+    bool gameStarted;
 
 public:
     Game(Player& p1, Player& p2);

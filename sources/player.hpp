@@ -8,17 +8,15 @@
 using namespace std;
 
 constexpr int STACKINISIZE = 26;
-constexpr int MAXSCOREPOS = 52;
 namespace ariel
 {
 class Player
 {
 private:
     string name;
-    Card wonCards[MAXSCOREPOS];
-    Card cardsStack[STACKINISIZE];
     int stackSize;
     int wonCardsSize;
+    string currRival;
     // player stats
     int totalwins;
     int totalGames;
@@ -28,13 +26,14 @@ private:
 public:
     Player(string name);
     string getName();
+    void setCurrR(string Rname);
+    string getCurrR();
     int cardesTaken();
     int stacksize();
     void updateStats(int wins, int games, int draws, int score);
-
-    void addWonCard(Card card);
-    void randomizeStack();
-    Card drawCard();
+    void addWonCards(int cards_won);
+    void newStack();
+    void decreaseStack();
 };
 }
 #endif
