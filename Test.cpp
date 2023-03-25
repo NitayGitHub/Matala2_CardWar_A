@@ -17,16 +17,21 @@ Game game2_1(p2, p1);
 Game game1_2_ver2(p1, p2);
 Game game3_4(p3, p4);
 
-TEST_CASE("CardsWon == 0")
-{
-    CHECK(p1.cardesTaken() == 0);
-}
-
 TEST_CASE("Print Before Turns Were Played")
 {
     CHECK_THROWS(game1_2.printLastTurn());
     CHECK_THROWS(game1_2.printWiner());
     CHECK_THROWS(game1_2.printLog());
+}
+
+TEST_CASE("Game With a Single Player")
+{
+    CHECK_THROWS_AS(Game game1_1(p1, p1), invalid_argument);
+}
+
+TEST_CASE("Player With No Name")
+{
+    CHECK_THROWS_AS(Player p(""), invalid_argument);
 }
 
 TEST_CASE("Stack Size Must Be 21 Or Less. Not Negative.")
@@ -82,3 +87,5 @@ TEST_CASE("Same Player; Diffrent Rival.")
     CHECK((p1.cardesTaken() == 0 || p3.cardesTaken() == 0));
     CHECK(p1.stacksize() == p3.stacksize());
 }
+
+

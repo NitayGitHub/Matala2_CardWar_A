@@ -5,7 +5,7 @@ using namespace ariel;
 
 Player::Player(string name){
     if (name.empty()){
-        throw string("Player name is empty.");
+        throw invalid_argument("Player name is empty.");
     }
     this->name = name;
     this->stackSize = 0;
