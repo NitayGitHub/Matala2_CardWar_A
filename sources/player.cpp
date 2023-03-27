@@ -14,6 +14,7 @@ Player::Player(string name){
     this->totalGames = 0;
     this->totaldraws = 0;
     this->highestScore = 0;
+    this->isPlaying = false;
 }
 
 string Player::getName(){
@@ -53,10 +54,10 @@ void Player::decreaseStack(){
     this->stackSize--;
 }
 
-void Player::setCurrR(string Rname){
-    this->currRival = Rname;
+void Player::setState(bool state){
+    this->isPlaying = state;
 }
 
-string Player::getCurrR(){
-    return this->currRival;
+bool Player::getState(){
+    return this->isPlaying;
 }

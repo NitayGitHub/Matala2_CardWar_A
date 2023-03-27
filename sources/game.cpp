@@ -17,20 +17,20 @@ void Game::playTurn()
     {
         throw string("Game has ended.");
     }
-    if (this->p1.getCurrR().empty() && this->p2.getCurrR().empty())
+    if (!(this->p1.getState()) && !(this->p2.getState()))
     {
-        this->p1.setCurrR(this->p2.getName());
-        this->p2.setCurrR(this->p1.getName());
-        p1.newStack();
-        p2.newStack();
+        this->p1.newStack();
+        this->p2.newStack();
+        this->p1.setState(true);
+        this->p2.setState(true);
         gameStarted = true;
     }
-    if (this->p1.getCurrR().empty() || this->p2.getCurrR().empty())
+    if ((this->p1.getState() && !(this->p2.getState())) || (!(this->p1.getState()) && this->p2.getState()))
     {
-        throw string("One of the players is in game.");
+        throw string("One of the players is in the middle of a game.");
     }
-    if(this->p1.getCurrR().compare(this->p2.getName()) != 0 || this->gameStarted == false){
-        throw string("One of the players is in game.");
+    if(this->gameStarted == false){
+        throw string("Two of the players are in the middle of other games.");
     }
     this->turn++;
     this->p1.decreaseStack();
@@ -39,10 +39,10 @@ void Game::playTurn()
     p1.addWonCards(1); // incorrect for now.
 
 
-    if (this->p1.stacksize() == 0)
+    if (this->p1.stacksize() == 0 && this->p2.stacksize() == 0)
     {
-        this->p1.setCurrR("");
-        this->p2.setCurrR("");
+        this->p1.setState(false);
+        this->p2.setState(false);
         this->winner = this->p2.getName(); // incorrect for now.
         gameStarted = false;
     }

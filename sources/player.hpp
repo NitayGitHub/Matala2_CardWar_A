@@ -17,6 +17,7 @@ private:
     int stackSize;
     int wonCardsSize;
     string currRival;
+    bool isPlaying;
     // player stats
     int totalwins;
     int totalGames;
@@ -26,8 +27,9 @@ private:
 public:
     Player(string name);
     string getName();
-    void setCurrR(string Rname);
-    string getCurrR();
+    void setState(bool state);
+    bool getState();
+
     int cardesTaken();
     int stacksize();
     void updateStats(int wins, int games, int draws, int score);
