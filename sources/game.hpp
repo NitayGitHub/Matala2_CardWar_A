@@ -17,6 +17,7 @@ private:
     string turnOutcome[STACKINISIZE];
     string winner;
     bool gameStarted;
+    int drawCounter;
 
 public:
     Game(Player& p1, Player& p2);

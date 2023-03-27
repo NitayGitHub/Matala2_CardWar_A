@@ -4,7 +4,7 @@
 using namespace std;
 using namespace ariel;
 
-Game::Game(Player &p1, Player &p2) : p1(p1), p2(p2), turn(0) {
+Game::Game(Player &p1, Player &p2) : p1(p1), p2(p2), turn(0), deck(), gameStarted(false), drawCounter(0) {
 if (&p1 == &p2)
 {
     throw invalid_argument("Player can't play against itself.");
